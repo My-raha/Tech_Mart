@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_mart/screens/bottomNavBar.dart';
 import 'package:tech_mart/screens/login.dart';
 
 class splash2 extends StatefulWidget {
@@ -17,7 +18,7 @@ class _splash2State extends State<splash2> with TickerProviderStateMixin {
     Timer(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(
-          builder: (BuildContext context) => const login(),
+          builder: (BuildContext context) => const NavBar(),
         ),
       );
     });

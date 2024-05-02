@@ -1,13 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tech_mart/screens/aboutUs.dart';
-import 'package:tech_mart/screens/basket.dart';
+import 'package:tech_mart/screens/cart.dart';
 import 'package:tech_mart/screens/categories.dart';
 import 'package:tech_mart/screens/contactUs.dart';
 import 'package:tech_mart/screens/login.dart';
-import 'package:tech_mart/screens/myAccount.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -20,6 +17,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       drawer: Drawer(
         child: ListView(
           children: [
@@ -28,13 +26,6 @@ class _homeState extends State<home> {
               leading: const Icon(Icons.account_box_rounded),
               title: const Text('My Account'),
               subtitle: Text('Mairaha'),
-              onTap: () => {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => myAccount(),
-                    ))
-              },
             ),
             Divider(
               height: 20,
@@ -50,7 +41,7 @@ class _homeState extends State<home> {
                 Navigator.push(
                     context,
                     MaterialPageRoute<void>(
-                      builder: (BuildContext context) => basket(),
+                      builder: (BuildContext context) => cart(),
                     ))
               },
             ),
@@ -101,10 +92,9 @@ class _homeState extends State<home> {
           style: TextStyle(fontSize: 25),
         ),
         titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontStyle: FontStyle.italic,
-          fontWeight: FontWeight.bold
-        ),
+            color: Colors.white,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -185,8 +175,11 @@ class _homeState extends State<home> {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 5),
-                      margin: EdgeInsets.only(right: 20,),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 10, right: 10, bottom: 5),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
                       height: 130,
                       width: 90,
                       decoration: BoxDecoration(
@@ -198,19 +191,25 @@ class _homeState extends State<home> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
-                              'assets/images/pad.jpg',                        
-                              
+                              'assets/images/pad.jpg',
                             ),
                           ),
-                           SizedBox(height: 10,),
-
-                          Text('Gaming',style: TextStyle(color: Colors.white),)
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Gaming',
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 5),
-                      margin: EdgeInsets.only(right: 20,),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 10, right: 10, bottom: 5),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
                       height: 130,
                       width: 90,
                       decoration: BoxDecoration(
@@ -222,19 +221,26 @@ class _homeState extends State<home> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
-                              'assets/images/lapi1.jpg',                        
+                              'assets/images/lapi1.jpg',
                               height: 75,
                             ),
                           ),
-                           SizedBox(height: 11,),
-
-                          Text('Laptops',style: TextStyle(color: Colors.white),)
+                          SizedBox(
+                            height: 11,
+                          ),
+                          Text(
+                            'Laptops',
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 5),
-                      margin: EdgeInsets.only(right: 20,),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 10, right: 10, bottom: 5),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
                       height: 130,
                       width: 90,
                       decoration: BoxDecoration(
@@ -246,19 +252,26 @@ class _homeState extends State<home> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'assets/images/pc2.jpg',                        
+                              'assets/images/pc2.jpg',
                               height: 75,
                             ),
                           ),
-                           SizedBox(height: 10,),
-
-                          Text('PCs',style: TextStyle(color: Colors.white),)
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'PCs',
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 5),
-                      margin: EdgeInsets.only(right: 20,),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 10, right: 10, bottom: 5),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
                       height: 130,
                       width: 90,
                       decoration: BoxDecoration(
@@ -270,19 +283,26 @@ class _homeState extends State<home> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
-                              'assets/images/speaker.jpg',                        
+                              'assets/images/speaker.jpg',
                               height: 75,
                             ),
                           ),
-                           SizedBox(height: 10,),
-
-                          Text('Audio',style: TextStyle(color: Colors.white),)
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Audio',
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 5),
-                      margin: EdgeInsets.only(right: 20,),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 10, right: 10, bottom: 5),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                      ),
                       height: 130,
                       width: 90,
                       decoration: BoxDecoration(
@@ -294,17 +314,17 @@ class _homeState extends State<home> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
-                              'assets/images/camera1.jpg', 
+                              'assets/images/camera1.jpg',
                               height: 75,
-                              ),
+                            ),
                           ),
-                           
-
-                          Text('Cameras',style: TextStyle(color: Colors.white),)
+                          Text(
+                            'Cameras',
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
-
                   ],
                 ),
               )

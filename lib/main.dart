@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_mart/screens/bottomNavBar.dart';
 import 'package:tech_mart/screens/home.dart';
 import 'package:tech_mart/screens/login.dart';
 import 'package:tech_mart/screens/splash.dart';
