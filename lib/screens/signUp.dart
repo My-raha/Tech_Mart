@@ -1,111 +1,191 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_mart/screens/login.dart';
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<signUp> createState() => _signUpState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _signUpState extends State<signUp> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(244, 237, 146, 90),
-        toolbarHeight: 40,
-        title: Text('Create an Account !'),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontStyle: FontStyle.italic,
-        ),      
-      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
-
-      width: MediaQuery.of(context).size.width,
-
-      decoration: const BoxDecoration(
-
-        image: DecorationImage(
-
-          image: AssetImage("assets/images/tech.jpg"),
-
-          fit: BoxFit.cover,
-
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/satellite.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
-
-    ),
         child: Padding(
           padding: const EdgeInsets.all(30),
           child: Column(
             children: [
               SizedBox(
-                height: 20,
+                height: 90,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Please enter first name',                     
-                    border: const OutlineInputBorder(),                   
+              Text(
+                'Sign Up',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 50,
+                ),
+              ),
+              SizedBox(
+                height: 70,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Please enter first name',
+                    border: InputBorder.none,
                     fillColor: Colors.white,
                     filled: true,
-                    hoverColor: Colors.blue),
+                  ),
+                  style: TextStyle(fontSize: 16),
+                  textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  keyboardType: TextInputType.name,
+                  textInputAction: TextInputAction.next,
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Please enter second name',                     
-                    border: const OutlineInputBorder(),                   
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Please enter second name',
+                    border: InputBorder.none,
                     fillColor: Colors.white,
                     filled: true,
-                    hoverColor: Colors.blue),
+                  ),
+                  style: TextStyle(fontSize: 16),
+                  textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  keyboardType: TextInputType.name,
+                  textInputAction: TextInputAction.next,
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                decoration: InputDecoration(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: TextField(
+                  decoration: InputDecoration(
                     hintText: 'Please enter email',
-                     prefixIcon: const Icon(Icons.email,color: Color.fromARGB(244, 237, 146, 90), ),
-                    border: const OutlineInputBorder(),                   
+                    prefixIcon: const Icon(
+                      Icons.email,
+                      color: Color.fromARGB(244, 237, 146, 90),
+                    ),
+                    border: InputBorder.none,
                     fillColor: Colors.white,
                     filled: true,
-                    hoverColor: Colors.blue),
+                  ),
+                  style: TextStyle(fontSize: 16),
+                  textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                decoration: InputDecoration(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: TextField(
+                  decoration: InputDecoration(
                     hintText: 'Create a password',
-                    prefixIcon: const Icon(Icons.lock,color: Color.fromARGB(244, 237, 146, 90), ),
-                    border: const OutlineInputBorder(),                   
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Color.fromARGB(244, 237, 146, 90),
+                    ),
+                    border: InputBorder.none,
                     fillColor: Colors.white,
                     filled: true,
-                    hoverColor: Colors.blue),
+                  ),
+                  style: TextStyle(fontSize: 16),
+                  textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  obscureText: true,
+                  textInputAction: TextInputAction.next,
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                decoration: InputDecoration(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: TextField(
+                  decoration: InputDecoration(
                     hintText: 'Confirm password',
-                    prefixIcon: const Icon(Icons.lock,color:Color.fromARGB(244, 237, 146, 90),),
-                    border: const OutlineInputBorder(),                   
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Color.fromARGB(244, 237, 146, 90),
+                    ),
+                    border: InputBorder.none,
                     fillColor: Colors.white,
                     filled: true,
-                    hoverColor: Colors.blue),
-              ), 
-
-              SizedBox(height: 22,),
-
-
+                  ),
+                  style: TextStyle(fontSize: 16),
+                  textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  obscureText: true,
+                  textInputAction: TextInputAction.done,
+                ),
+              ),
+              SizedBox(
+                height: 22,
+              ),
               ElevatedButton(
-                onPressed: () {}, 
-                child: Text('Submit'))
+                onPressed: () {},
+                child: Text(
+                  'Submit',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                    letterSpacing: 2,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(244, 237, 146, 90),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+                            SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const Login(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Already have an account? Sign In!",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

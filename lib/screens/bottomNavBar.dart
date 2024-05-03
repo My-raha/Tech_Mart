@@ -39,20 +39,20 @@ class _NavBarState extends State<NavBar> {
             });
           },
           buttonBackgroundColor: Colors.blue,
-          color: Color.fromARGB(244, 237, 146, 90),
+          color: Color.fromARGB(244, 238, 116, 15),
           backgroundColor: Colors.transparent,
           height: 53,
           items: [
             Icon(
-              Icons.person_outlined,
+              Icons.person,
               color: Colors.white,
             ),
             Icon(
-              Icons.home_outlined,
+              Icons.home,
               color: Colors.white,
             ),
             Icon(
-              Icons.shopping_bag_outlined,
+              Icons.shopping_bag,
               color: Colors.white,
             ),
           ]),
