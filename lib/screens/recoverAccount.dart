@@ -27,7 +27,7 @@ class _accRecoverState extends State<accRecover> {
           child: Column(
             children: [
               SizedBox(
-                height: 90,
+                height: 159,
               ),
               Text(
                 'Recover Account',
@@ -40,7 +40,17 @@ class _accRecoverState extends State<accRecover> {
               SizedBox(
                 height: 70,
               ),
-
+              Text(
+                'We will send you an email to help you reset your password',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: TextField(
@@ -64,56 +74,13 @@ class _accRecoverState extends State<accRecover> {
               SizedBox(
                 height: 20,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Create a password',
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      color: Color.fromARGB(244, 237, 146, 90),
-                    ),
-                    border: InputBorder.none,
-                    fillColor: Colors.white,
-                    filled: true,
-                  ),
-                  style: TextStyle(fontSize: 16),
-                  textAlignVertical: TextAlignVertical.center,
-                  textAlign: TextAlign.start,
-                  obscureText: true,
-                  textInputAction: TextInputAction.next,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Confirm password',
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      color: Color.fromARGB(244, 237, 146, 90),
-                    ),
-                    border: InputBorder.none,
-                    fillColor: Colors.white,
-                    filled: true,
-                  ),
-                  style: TextStyle(fontSize: 16),
-                  textAlignVertical: TextAlignVertical.center,
-                  textAlign: TextAlign.start,
-                  obscureText: true,
-                  textInputAction: TextInputAction.done,
-                ),
-              ),
               SizedBox(
                 height: 22,
               ),
               ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  'Submit',
+                  'Send Email',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
@@ -128,7 +95,7 @@ class _accRecoverState extends State<accRecover> {
                   ),
                 ),
               ),
-                            SizedBox(
+              SizedBox(
                 height: 10,
               ),
               TextButton(
@@ -151,7 +118,7 @@ class _accRecoverState extends State<accRecover> {
               ),
             ],
           ),
-       ),
+        ),
       ),
     );
   }

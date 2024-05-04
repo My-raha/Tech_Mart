@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_mart/screens/aboutUs.dart';
 import 'package:tech_mart/screens/cart.dart';
@@ -81,12 +82,13 @@ class _homeState extends State<home> {
               iconColor: Color.fromARGB(244, 237, 146, 90),
               leading: const Icon(Icons.exit_to_app_sharp),
               title: const Text('Log Out'),
-              onTap: () => {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => Login(),
-                    ))
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
             ),
           ],
@@ -217,7 +219,7 @@ class _homeState extends State<home> {
                         height: 130,
                         width: 90,
                         decoration: BoxDecoration(
-                         color: Color.fromARGB(130, 244, 237, 146),
+                          color: Color.fromARGB(130, 244, 237, 146),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: Column(
@@ -279,7 +281,7 @@ class _homeState extends State<home> {
                         height: 130,
                         width: 90,
                         decoration: BoxDecoration(
-                         color: Color.fromARGB(130, 244, 237, 146),
+                          color: Color.fromARGB(130, 244, 237, 146),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
@@ -322,6 +324,9 @@ class _homeState extends State<home> {
                                 height: 75,
                               ),
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Text(
                               'Cameras',
                               style: TextStyle(color: Colors.white),
@@ -352,7 +357,7 @@ class _homeState extends State<home> {
                         "See More..",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                         color: Color.fromARGB(244, 237, 146, 90),
+                          color: Color.fromARGB(244, 237, 146, 90),
                           fontSize: 20,
                         ),
                       ),
@@ -764,7 +769,7 @@ class _homeState extends State<home> {
                         height: 250,
                         width: 160,
                         decoration: BoxDecoration(
-                         color: Color.fromARGB(130, 244, 237, 146),
+                          color: Color.fromARGB(130, 244, 237, 146),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: Column(

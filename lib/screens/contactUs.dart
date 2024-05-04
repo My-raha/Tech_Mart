@@ -46,104 +46,66 @@ class _contactUsState extends State<contactUs> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 50),
-              child: Text(
-                'Get in Touch',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 50,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                child: Text(
+                  'Get in Touch',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 50,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 30),
-              height: 250,
-              width: 330,
-              decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Container(
-                margin: EdgeInsets.only(top: 40),
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Row(
+              Container(
+                margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                height: 250,
+                width: 330,
+                decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Container(
+                  margin: EdgeInsets.only(top: 40),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.phone),
+                            Text(
+                              'Call Us: +254 717873722',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  letterSpacing: 3),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Icon(Icons.phone),
-                          Text(
-                            'Call Us: +254 717873722',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 18,
-                                letterSpacing: 3),
+                          FaIcon(
+                            FontAwesomeIcons.instagram,
                           ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.instagram,
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            _launchInstagram(
-                                'https://www.instagram.com/mairaha_18');
-                          },
-                          child: Text(
-                            'Follow us on Instagram',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 18,
-                                letterSpacing: 3),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 6),
-                      child: Row(
-                        children: [
-                          Icon(Icons.email),
                           TextButton(
-                            onPressed: () async {
-                              const emailAddress = 'mairahashawn@gmail.com';
-                              final Uri emailLaunchUri = Uri(
-                                scheme: 'mailto',
-                                path: emailAddress,
-                                queryParameters: {
-                                  'subject': 'Feedback on Tech Mart'
-                                },
-                              );
-                              try {
-                                if (await canLaunch(
-                                    emailLaunchUri.toString())) {
-                                  await launch(emailLaunchUri.toString());
-                                } else {
-                                  throw 'Could not launch $emailLaunchUri';
-                                }
-                              } catch (e) {
-                                print(
-                                    'Failed launch email: $e please check you internet connection');
-                              }
+                            onPressed: () {
+                              _launchInstagram(
+                                  'https://www.instagram.com/mairaha_18');
                             },
                             child: Text(
-                              'Send an email...',
+                              'Follow us on Instagram',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -153,71 +115,113 @@ class _contactUsState extends State<contactUs> {
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 6),
+                        child: Row(
+                          children: [
+                            Icon(Icons.email),
+                            TextButton(
+                              onPressed: () async {
+                                const emailAddress = 'mairahashawn@gmail.com';
+                                final Uri emailLaunchUri = Uri(
+                                  scheme: 'mailto',
+                                  path: emailAddress,
+                                  queryParameters: {
+                                    'subject': 'Feedback on Tech Mart'
+                                  },
+                                );
+                                try {
+                                  if (await canLaunch(
+                                      emailLaunchUri.toString())) {
+                                    await launch(emailLaunchUri.toString());
+                                  } else {
+                                    throw 'Could not launch $emailLaunchUri';
+                                  }
+                                } catch (e) {
+                                  print(
+                                      'Failed launch email: $e please check you internet connection');
+                                }
+                              },
+                              child: Text(
+                                'Send an email...',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    letterSpacing: 3),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 20, right: 20, top: 30),
-              height: 200,
-              width: 330,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.3),
-                borderRadius: BorderRadius.circular(20),
+              SizedBox(
+                height: 50,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 90),
+              Container(
+                margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                height: 200,
+                width: 330,
+                decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        margin: EdgeInsets.only(left: 90),
+                        child: Text(
+                          "Address",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 24,
+                            letterSpacing: 3,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
-                        "Address",
+                        'Moi Avenue Bihi-Towers,\nNairobi,\nKenya Basement 1\nShop B2.',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 24,
+                          fontSize: 18,
                           letterSpacing: 3,
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'Moi Avenue Bihi-Towers,\nNairobi,\nKenya Basement 1\nShop B2.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 18,
-                        letterSpacing: 3,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 50),
-              child: Text(
-                '© 2024 Tech Mart. All rights reserved.',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                  fontSize: 20,
-                  letterSpacing: 2,
+                  ],
                 ),
               ),
-            )
-          ],
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 50),
+                child: Text(
+                  '© 2024 Tech Mart. All rights reserved.',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                    fontSize: 20,
+                    letterSpacing: 2,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
